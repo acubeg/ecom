@@ -1,10 +1,12 @@
 package com.ecom.userService.service;
 
-import com.ecom.userService.dto.OrderEvent;
 import com.ecom.userService.dto.UserDTO;
 import com.ecom.userService.entity.UserEntity;
 import com.ecom.userService.repository.UserRepository;
 import com.ecom.userService.util.ValidationUtil;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,10 +25,11 @@ public class UserService {
 
     public UserDTO getUserDetails(String userId) throws Exception {
 
-        UserEntity userEntity = userRepository.findByEmailId(userId).orElseThrow(() -> new Exception("User not Found."));
+        UserEntity userEntity = userRepository.findByEmailId(userId)
+                .orElseThrow(() -> new Exception("User not Found."));
 
         UserDTO response = new UserDTO();
-        //response.setUserId(userId);
+        // response.setUserId(userId);
         response.setFirstName(userEntity.getFirstName());
         response.setLastName(userEntity.getLastName());
         response.setEmailId(userEntity.getEmailId());
@@ -34,7 +37,7 @@ public class UserService {
         return response;
     }
 
-
+    @Transactional
     public String createUserAccount(UserDTO request) throws Exception {
 
         request = ValidationUtil.validateUserRequest(request);
@@ -55,6 +58,7 @@ public class UserService {
         return "Account Successfully Created.";
     }
 
+    @Transactional
     public String updateUserAccount(UserDTO request) throws Exception {
         request = ValidationUtil.validateUserRequest(request);
         Optional<UserEntity> userOptional = userRepository.findByEmailId(request.getEmailId());
@@ -80,7 +84,8 @@ public class UserService {
         return "Account Successfully Updated.";
     }
 
-    public String deleteUserAccount(String emailId) throws Exception{
+    @Transactional
+    public String deleteUserAccount(String emailId) throws Exception {
         Optional<UserEntity> userOptional = userRepository.findByEmailId(emailId);
 
         if (userOptional.isEmpty()) {

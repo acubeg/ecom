@@ -6,6 +6,8 @@ import lombok.Data;
 public class OrderEvent {
     private String productId;
     private String productName;
-    private Long userId;
+    private String userId;
     private String userEmail;
+    private Integer quantity;
+    private Double price;
 }

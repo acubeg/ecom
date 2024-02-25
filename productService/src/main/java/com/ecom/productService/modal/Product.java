@@ -11,6 +11,8 @@ public class Product {
     private String id;
     private String name;
     private double price;
-    // Getters and setters
+    private String description;
+    private Integer stock;
+    private double discout;
 }
 

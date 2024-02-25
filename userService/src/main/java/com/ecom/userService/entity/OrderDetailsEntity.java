@@ -16,6 +16,12 @@ public class OrderDetailsEntity {
     @Column(name = "product_name")
     private String productName;
 
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @Column(name ="price")
+    private Double price;
+
     @Column(name = "user_id")
     private Long userId;
 

@@ -1,13 +1,13 @@
-package com.ecom.userService.dto;
+package com.ecom.productService.dto;
 
 import lombok.Data;
 
 @Data
-public class OrderEvent {
+public class OrderRequest {
+
     private String productId;
     private String productName;
+    private Integer quantity;
     private String userId;
     private String userEmail;
-    private Integer quantity;
-    private Double price;
 }
