@@ -16,4 +16,4 @@ APIS:
   3) POST http://localhost:8080/api/products (with JSON payload)
   4) PUT http://localhost:8080/api/products/{id} (with JSON payload)
   5) DELETE http://localhost:8080/api/products/{id}
-  6) POST http://localhostL8080/order/create-order ( create order api)
+  6) POST-=http://localhostL8080/order/create-order ( create order api)
