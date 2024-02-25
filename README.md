@@ -1,5 +1,4 @@
-User Service
-Technology Stack: Java 8, Spring Boot 3.2, Kafka, MySQL, etc.
+User Service Technology Stack: Java 8, Spring Boot 3.2, Kafka, MySQL, etc.
 APIS:
   1) POST localhost:8080/ecom/api/auth/get-token ( for getting jwt token)
   2) GET localhost:8080/ecom/api/user (get user details)
@@ -7,9 +6,7 @@ APIS:
   4) POST localhost:8080/ecom/api/auth/update-account
   5) DELETE localhost:8080/ecom/api/auth/delete-account/email=?
   
-Product Service
-Technology Stack: Java 17, Spring Boot 2.7, Kafka, MongoDB, etc.
-
+Product Service Technology Stack: Java 17, Spring Boot 2.7, Kafka, MongoDB, etc.
 APIS:
   1) GET http://localhost:8080/api/products
   2) GET http://localhost:8080/api/products/{id}
