@@ -4,8 +4,8 @@ APIS:
   1)POST localhost:8080/ecom/api/auth/get-token ( for getting jwt token)
   2)GET localhost:8080/ecom/api/user (get user details)
   3)POST localhost:8080/ecom/api/auth/create-account (create user account)
-  3)POST localhost:8080/ecom/api/auth/update-account
-  4)DELETE localhost:8080/ecom/api/auth/delete-account/email=?
+  4)POST localhost:8080/ecom/api/auth/update-account
+  5)DELETE localhost:8080/ecom/api/auth/delete-account/email=?
   
 Product Service
 Technology Stack: Java 17, Spring Boot 2.7, Kafka, MongoDB, etc.
