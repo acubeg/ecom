@@ -11,11 +11,11 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
-	
+
+
 	@GetMapping
 	public UserDTO getUserDetails(@RequestParam(name = "user-id", required = true) String userId) throws Exception {
-		
+
 		return userService.getUserDetails(userId);
 	}
 
@@ -25,8 +25,13 @@ public class UserController {
 		return userService.createUserAccount(request);
 	}
 
+	@PostMapping("/update-account")
 	public String updateUserAccount(@RequestBody UserDTO request) throws Exception{
 		return userService.updateUserAccount(request);
 	}
 
+	@DeleteMapping("/delete-account/{email-id}")
+	public String updateUserAccount(@RequestParam(value = "email-d") String userEmail) throws Exception{
+		return userService.deleteUserAccount(userEmail);
+	}
 }
